@@ -36,7 +36,7 @@ class ApiService {
         "/api/login",
         data: jsonEncode({"email": email, "password": password}),
       );
-      log(response.statusCode.toString());
+      // log(response.statusCode.toString());
       if (response.statusCode == 200) {
         return response.data["token"];
       }
@@ -106,6 +106,7 @@ class ApiService {
   Future<List<ApiModel>?> getItems() async {
     try {
       Response response = await dio.get("/api/items");
+      log("getItems ${response.statusCode} ${response.data}");
       if (response.statusCode == 200) {
         String jsonResponse = jsonEncode(response.data);
         return apiModelFromJson(jsonResponse);

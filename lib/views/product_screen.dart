@@ -58,10 +58,10 @@ class _ProductScreenState extends ConsumerState<ProductScreen> {
                             )),
                         GestureDetector(
                           onTap: () {
-                            setState(() {
-                              widget.products[index].isExpand =
-                                  !widget.products[index].isExpand;
-                            });
+                            // setState(() {
+                            widget.products[index].isExpand =
+                                !widget.products[index].isExpand;
+                            // });
                           },
                           child: Row(
                             children: [

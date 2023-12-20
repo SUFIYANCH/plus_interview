@@ -8,7 +8,10 @@ import 'package:plus_interview/views/product_screen.dart';
 
 class HomeScreen extends ConsumerWidget {
   final String token;
-  const HomeScreen({super.key, required this.token});
+  const HomeScreen({
+    super.key,
+    required this.token,
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -55,9 +58,20 @@ class HomeScreen extends ConsumerWidget {
                 ));
           },
           error: (error, stackTrace) {
-            return const Scaffold(
-              body: Center(
-                child: Text("Something went wrong"),
+            return Scaffold(
+              body: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Center(
+                    child: Text("Something went wrong"),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      ref.invalidate(dataProvider);
+                    },
+                    child: const Text("Retry"),
+                  )
+                ],
               ),
             );
           },

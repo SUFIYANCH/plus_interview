@@ -38,7 +38,6 @@ class ApiModel {
         description: json["description"],
         category: json["category"],
         image: json["image"],
-        isExpand: json["isexpand"],
         rating: json["rating"] == null ? null : Rating.fromJson(json["rating"]),
       );
 

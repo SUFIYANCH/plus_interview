@@ -3,7 +3,7 @@ import 'package:plus_interview/models/api_model.dart';
 import 'package:plus_interview/service/api_service.dart';
 
 //api provider
-final dataProvider = FutureProvider<List<ApiModel>?>((ref) async {
+final dataProvider = FutureProvider<List<ApiModel>?>((ref) {
   return ApiService().getItems();
 });
 
